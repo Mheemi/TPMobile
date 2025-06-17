@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.ifts18.tpfinal.fragments.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_grades"
+        android:name="com.ifts18.tpfinal.fragments.GradesFragment"
+        android:label="@string/menu_grades"
+        tools:layout="@layout/fragment_grades" />
+
+    <fragment
+        android:id="@+id/nav_deadlines"
+        android:name="com.ifts18.tpfinal.fragments.DeadlinesFragment"
+        android:label="@string/menu_deadlines"
+        tools:layout="@layout/fragment_deadlines" />
+
+    <fragment
+        android:id="@+id/nav_schedule"
+        android:name="com.ifts18.tpfinal.fragments.ScheduleFragment"
+        android:label="@string/menu_schedule"
+        tools:layout="@layout/fragment_schedule" />
+
+    <fragment
+        android:id="@+id/nav_attendance"
+        android:name="com.ifts18.tpfinal.fragments.AttendanceFragment"
+        android:label="@string/menu_attendance"
+        tools:layout="@layout/fragment_attendance" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.ifts18.tpfinal.fragments.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+
+</navigation>

@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Mi Universidad</string>
+
+    <string name="login_title">Login</string>
+    <string name="username_hint">Usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="forgot_password">Olvidé contraseña</string>
+    <string name="register_new_user">Registrar nuevo usuario</string>
+
+    <string name="navigation_drawer_open">Abrir menú de navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú de navegación</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_grades">Calificaciones</string>
+    <string name="menu_deadlines">Vencimientos</string>
+    <string name="menu_schedule">Cronograma semanal</string>
+    <string name="menu_attendance">Presentismo</string>
+    <string name="menu_about">Acerca de</string>
+
+    <string name="welcome_title">¡Hola, Juan!</string>
+    <string name="welcome_subtitle">Aquí tienes un resumen de tu estado académico</string>
+    <string name="quick_access_title">Acceso Rápido</string>
+    <string name="notifications_title">📢 Notificaciones Importantes</string>
+
+    <string name="average_label">Promedio General</string>
+    <string name="attendance_label">Asistencia</string>
+    <string name="average_value">8.5</string>
+    <string name="attendance_value">85%</string>
+
+    <string name="grades_title">Calificaciones</string>
+    <string name="grades_subtitle">Ver notas</string>
+    <string name="deadlines_title">Vencimientos</string>
+    <string name="deadlines_subtitle">Próximas fechas</string>
+    <string name="schedule_title">Cronograma</string>
+    <string name="schedule_subtitle">Horarios</string>
+    <string name="attendance_title">Asistencias</string>
+    <string name="attendance_subtitle">Mi presentismo</string>
+
+    <string name="notification_1">• Examen Final de Matemática - 15 de Junio</string>
+    <string name="notification_2">• Entrega TP Programación - 12 de Junio</string>
+    <string name="notification_3">• Inscripción Materias - Hasta el 20 de Junio</string>
+
+    <string name="nav_header_title">Mi Nombre de Usuario</string>
+    <string name="nav_header_subtitle">mi.usuario@ejemplo.com</string>
+    <string name="nav_header_desc">Header de navegación</string>
+
+
+    <string name="close">Cerrar</string>
+    <string name="open">Abrir</string>
+</resources>

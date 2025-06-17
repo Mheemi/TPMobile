@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales basados en mockups -->
+    <color name="primary_purple">#6200EA</color>
+    <color name="primary_purple_dark">#3700B3</color>
+    <color name="primary_purple_light">#BB86FC</color>
+
+    <!-- Gradientes del welcome section -->
+    <color name="gradient_start">#667eea</color>
+    <color name="gradient_end">#764ba2</color>
+
+    <!-- Colores de fondo -->
+    <color name="background_gray">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Colores de texto -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+
+    <!-- Colores de calificaciones -->
+    <color name="grade_high">#4CAF50</color>
+    <color name="grade_medium">#FF9800</color>
+    <color name="grade_low">#F44336</color>
+    <color name="red">#F44335</color>
+    <color name="yellow">#FFFF00</color>
+
+    <!-- Login colors -->
+    <color name="login_blue">#4A90E2</color>
+    <color name="login_blue_dark">#357ABD</color>
+
+    <!-- Colores adicionales -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="gray_light">#E0E0E0</color>
+    <color name="gray_medium">#BDBDBD</color>
+
+    <!-- Colores para las materias -->
+    <color name="subject_programming">#9C27B0</color>
+    <color name="subject_math">#4CAF50</color>
+    <color name="subject_database">#FF9800</color>
+    <color name="subject_default">#2196F3</color>
+
+
+</resources>
