@@ -6,16 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.ifts18.tpfinal.R
 import com.ifts18.tpfinal.adapters.GradesAdapter
-import com.ifts18.tpfinal.databinding.FragmentGradesBinding
 import com.ifts18.tpfinal.models.Grade
 import com.ifts18.tpfinal.models.GradeStatus
 
 class GradesFragment : Fragment() {
 
-    private var _binding: FragmentGradesBinding? = null
-    private val binding get() = _binding!!
-
+    private lateinit var recyclerGrades: RecyclerView
     private lateinit var gradesAdapter: GradesAdapter
 
     // Datos simulados de calificaciones
@@ -54,26 +53,24 @@ class GradesFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentGradesBinding.inflate(inflater, container, false)
-        return binding.root
+    ): View? {
+        return inflater.inflate(R.layout.fragment_grades, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Inicializar vistas
+        recyclerGrades = view.findViewById(R.id.recyclerGrades)
+
         setupRecyclerView()
     }
 
     private fun setupRecyclerView() {
         gradesAdapter = GradesAdapter(gradesList)
-        binding.recyclerGrades.apply {
+        recyclerGrades.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = gradesAdapter
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

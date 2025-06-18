@@ -1,9 +1,26 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.AppAcademica" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.AppAcademica" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_purple</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primary_purple_light</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary</item>
+        <item name="colorSecondary">@color/login_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/login_blue_dark</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+        <item name="android:colorBackground">@color/background_gray</item>
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/gray_light</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorError">@color/red</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="android:divider">@color/gray_light</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
     </style>
-
-    <style name="Theme.AppAcademica" parent="Base.Theme.AppAcademica" />
 
     <style name="Theme.AppAcademica.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.AppAcademica.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

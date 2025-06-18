@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.ifts18.tpfinal.R
 import com.ifts18.tpfinal.adapters.DeadlinesAdapter
-import com.ifts18.tpfinal.databinding.FragmentDeadlinesBinding
 import com.ifts18.tpfinal.models.DeadlineItem
 
 class DeadlinesFragment : Fragment() {
 
-    private var _binding: FragmentDeadlinesBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var recyclerDeadlines: RecyclerView
 
     private val mockItems = listOf(
         DeadlineItem("Trabajo Práctico 2", "14 de marzo"),
@@ -24,20 +24,19 @@ class DeadlinesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentDeadlinesBinding.inflate(inflater, container, false)
-        return binding.root
+    ): View? {
+        return inflater.inflate(R.layout.fragment_deadlines, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.recyclerDeadlines.apply {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Inicializar vistas
+        recyclerDeadlines = view.findViewById(R.id.recyclerDeadlines)
+
+        recyclerDeadlines.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = DeadlinesAdapter(mockItems)
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

@@ -4,18 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ifts18.tpfinal.R
 import com.ifts18.tpfinal.adapters.QuickAccessAdapter
-import com.ifts18.tpfinal.databinding.FragmentHomeBinding
 import com.ifts18.tpfinal.models.QuickAccessItem
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var tvWelcome: TextView
+    private lateinit var tvSubtitle: TextView
+    private lateinit var recyclerQuickAccess: RecyclerView
 
     private val quickAccessItems = listOf(
         QuickAccessItem(R.drawable.ic_assessment_24, "Calificaciones", "Ver notas"),
@@ -27,21 +29,27 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
+    ): View? {
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.tvWelcome.text = getString(R.string.welcome_title)
-        binding.tvSubtitle.text = getString(R.string.welcome_subtitle)
+        super.onViewCreated(view, savedInstanceState)
+
+        // Inicializar vistas
+        tvWelcome = view.findViewById(R.id.tvWelcome)
+        tvSubtitle = view.findViewById(R.id.tvSubtitle)
+        recyclerQuickAccess = view.findViewById(R.id.recyclerQuickAccess)
+
+        tvWelcome.text = getString(R.string.welcome_title)
+        tvSubtitle.text = getString(R.string.welcome_subtitle)
 
         setupRecyclerView()
     }
 
     private fun setupRecyclerView() {
-        binding.recyclerQuickAccess.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerQuickAccess.adapter = QuickAccessAdapter(quickAccessItems) { item ->
+        recyclerQuickAccess.layoutManager = LinearLayoutManager(requireContext())
+        recyclerQuickAccess.adapter = QuickAccessAdapter(quickAccessItems) { item ->
             handleQuickAccessClick(item)
         }
     }
@@ -61,10 +69,5 @@ class HomeFragment : Fragment() {
                 findNavController().navigate(R.id.nav_attendance)
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

@@ -4,24 +4,30 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.ifts18.tpfinal.databinding.FragmentAboutBinding
+import com.ifts18.tpfinal.R
 
 class AboutFragment : Fragment() {
 
-    private var _binding: FragmentAboutBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var tvPolicy: TextView
+    private lateinit var tvVersion: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentAboutBinding.inflate(inflater, container, false)
-        return binding.root
+    ): View? {
+        return inflater.inflate(R.layout.fragment_about, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.tvPolicy.text = """
+        super.onViewCreated(view, savedInstanceState)
+
+        // Inicializar vistas
+        tvPolicy = view.findViewById(R.id.tvPolicy)
+        tvVersion = view.findViewById(R.id.tvVersion)
+
+        tvPolicy.text = """
             Esta aplicación fue desarrollada con fines académicos para facilitar el seguimiento de la cursada por parte de los estudiantes.
 
             El uso de esta app es exclusivo para alumnos del Instituto de Formación Técnica N°18.
@@ -31,11 +37,6 @@ class AboutFragment : Fragment() {
             Al utilizar esta aplicación, el usuario acepta las condiciones aquí expuestas.
         """.trimIndent()
 
-        binding.tvVersion.text = "Versión\n1.0"
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        tvVersion.text = "Versión\n1.0"
     }
 }
